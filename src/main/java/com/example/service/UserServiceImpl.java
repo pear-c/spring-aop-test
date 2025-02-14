@@ -6,16 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
-    private final Map<String, User> userStore = new HashMap<>();
+    private UserRepository userRepository;
 
-    @Override
-    public void addUser(User user) {
-        userStore.put(user.getId(), user);
-        System.out.println("User added: " + user.getId());
+    // 생성자 주입
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
-    public User getUserById(String id) {
-        return userStore.get(id);
+    public void registerUser(User user) {
+        userRepository.save(user);
     }
 }

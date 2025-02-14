@@ -4,7 +4,4 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <!-- UserService 빈 정의 -->
-    <bean id="userService" class="com.example.service.UserServiceImpl" />
 </beans>
